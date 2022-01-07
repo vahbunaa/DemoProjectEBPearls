@@ -1,13 +1,22 @@
 const User = require("../models/User");
 
 exports.filterUsers = async (req, res, next) => {
+  console.log(req.query);
   const { age, interestedIn, hobbies } = req.query;
-  const [lowerLimit, upperLimit] = JSON.parse(age);
+  // const [lowerLimit, upperLimit] = JSON.parse(age);
 
+  // try {
+  //   const filteredArray = await User.find({
+  //     $and: [
+  //       { age: { $gte: lowerLimit, $lte: upperLimit } },
+  //       { interestedIn: { $eq: interestedIn } },
+  //       { "hobbies.hobbieTitle": { $eq: hobbies } },
+  //     ],
+  //   });
   try {
     const filteredArray = await User.find({
       $and: [
-        { age: { $gte: lowerLimit, $lte: upperLimit } },
+        { age: { $eq: age } },
         { interestedIn: { $eq: interestedIn } },
         { "hobbies.hobbieTitle": { $eq: hobbies } },
       ],

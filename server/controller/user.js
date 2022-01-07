@@ -32,7 +32,7 @@ exports.createToken = async (req, res, next) => {
     const token = await sendToken(id.toString());
 
     if (!token) throw new Error();
-
+    res.setHeader("authorization", token);
     return res
       .status(201)
       .send({ status: "success", data: { user: req.user, token } });
