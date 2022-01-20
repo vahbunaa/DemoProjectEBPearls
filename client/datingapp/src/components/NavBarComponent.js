@@ -11,9 +11,10 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import Explore from "../page/Explore";
 import FilterUsers from "../page/FilterUsersPage";
 
-const pages = ["Search", "Pricing", "Blog"];
+const pages = ["Search", "Text", "Notification"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
 
 const ResponsiveAppBar = () => {
@@ -46,7 +47,7 @@ const ResponsiveAppBar = () => {
             sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
           >
             {/* name = {res.data.data.user.name} */}
-            dasda
+            Bhetum
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -79,11 +80,11 @@ const ResponsiveAppBar = () => {
                 display: { xs: "block", md: "none" },
               }}
             >
-              {pages.map((page) => (
+              {/* {pages.map((page) => (
                 <MenuItem key={page} onClick={handleCloseNavMenu}>
                   <Typography textAlign="center">{page}</Typography>
                 </MenuItem>
-              ))}
+              ))} */}
             </Menu>
           </Box>
           <Typography
@@ -95,7 +96,7 @@ const ResponsiveAppBar = () => {
             ggg
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
-            {pages.map((page) => (
+            {/* {pages.map((page) => (
               <Button
                 key={page}
                 onClick={handleCloseNavMenu}
@@ -103,7 +104,10 @@ const ResponsiveAppBar = () => {
               >
                 {page}
               </Button>
-            ))}
+            ))} */}
+            <Button sx={{ my: 2, color: "white", display: "block" }}>
+              Expore
+            </Button>
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

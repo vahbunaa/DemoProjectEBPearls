@@ -7,24 +7,25 @@ import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
 import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
+import { utils } from "../utilites/fetch";
 
 export default function FilterUsers() {
   const [open, setOpen] = React.useState(false);
 
   const [values, setValues] = React.useState({ age: "", hobbies: "" });
+  const endpointGetFilteredUsers = `http://localhost:5000/filterUser?age=${values.age}&interestedIn=female&hobbies=${values.hobbies}`;
 
   const handleClickOpen = () => {
     setOpen(true);
   };
-  const endpointGetFilteredUsers = `http://localhost:5000/filterUser?age=${values.age}&interestedIn=female&hobbies=${values.hobbies}`;
 
   const handleClose = () => {
     setOpen(false);
   };
   const handleSearch = async () => {
     const response = await axios.get(endpointGetFilteredUsers);
-    console.log(response);
-    console.log(values);
+    console.log("This is a response", response);
+    console.log("These are values", values);
   };
 
   return (
