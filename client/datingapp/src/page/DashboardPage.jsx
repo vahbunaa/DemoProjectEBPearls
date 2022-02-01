@@ -3,9 +3,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import { CardComponent } from "../components/CardComponent";
 import ResponsiveAppBar from "../components/NavBarComponent";
-import GetUsers from "../components/getAllUsers";
-import GetFilteredUsers from "../utilites/getFilteredUsers";
-import FilterUsers from "./FilterUsersPage";
+import GetUsers from "../components/user/getAllUsers";
+import GetFilteredUsers from "../components/user/getFilteredUsers";
+import FilterDialog from "../components/dialog/FilterDialog";
 
 const DashboardPage = () => {
   return (
@@ -14,7 +14,7 @@ const DashboardPage = () => {
         <ResponsiveAppBar />
       </div>
       <div>
-        <FilterUsers />
+        <FilterDialog />
       </div>
       <div>
         <GetUsers />

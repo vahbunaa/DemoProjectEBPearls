@@ -1,9 +1,9 @@
 import React from "react";
 import axios from "axios";
-import { CardComponent } from "./CardComponent";
+import { CardComponent } from "../CardComponent";
 import { useSelector, useDispatch } from "react-redux";
-import { setUsers } from "../redux/slice/userSlice";
-import { utils } from "../utilites/fetch";
+import { setUsers } from "../../redux/slice/userSlice";
+import { utils } from "../../utilites/fetch";
 
 // const endpointGetAllUsers = "http://localhost:5000/users";
 

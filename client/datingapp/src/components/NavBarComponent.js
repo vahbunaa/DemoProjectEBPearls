@@ -12,7 +12,8 @@ import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import Explore from "../page/Explore";
-import FilterUsers from "../page/FilterUsersPage";
+import FilterDialog from "./dialog/FilterDialog";
+import { useHistory } from "react-router-dom";
 
 const pages = ["Search", "Text", "Notification"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
@@ -20,7 +21,7 @@ const settings = ["Profile", "Account", "Dashboard", "Logout"];
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
-
+  const history = useHistory();
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };
@@ -29,6 +30,9 @@ const ResponsiveAppBar = () => {
   };
 
   const handleCloseNavMenu = () => {
+    console.log("adasd");
+
+    history.push("/");
     setAnchorElNav(null);
   };
 

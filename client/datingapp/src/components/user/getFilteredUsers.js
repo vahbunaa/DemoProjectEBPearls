@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-import { CardComponent } from "../components/CardComponent";
+import { CardComponent } from "../CardComponent";
 
 const endpointGetFilteredUsers = `http://localhost:5000/filterUser?age=23&interestedIn=male&hobbies=read`;
 

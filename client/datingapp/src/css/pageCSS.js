@@ -99,4 +99,7 @@ export const Wrapper = styled.section`
     text-decoration: none;
     margin: 15px 0;
   }
+  .error {
+    color: red;
+  }
 `;

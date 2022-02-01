@@ -5,7 +5,7 @@ import * as Yup from "yup";
 import { signupUser } from "../requests/loginRequests";
 import { Wrapper } from "../css/pageCSS";
 
-const SignUpPage = () => {
+const editUserDetails = () => {
   return (
     <Formik
       initialValues={{
@@ -22,26 +22,26 @@ const SignUpPage = () => {
         location: "",
       }}
       validationSchema={Yup.object().shape({
-        firstName: Yup.string().required(),
-        lastName: Yup.string().required(),
-        age: Yup.number().min(17).max(100).required(),
+        firstName: Yup.string(),
+        lastName: Yup.string(),
+        age: Yup.number().min(17).max(100),
         email: Yup.string()
           .email({ tlds: { allow: false } })
-          .required()
+
           .lowercase()
           .trim(),
-        password: Yup.string().required().min(6).max(20).trim(),
+        password: Yup.string().min(6).max(20).trim(),
         bio: Yup.string().trim().lowercase(),
-        gender: Yup.string().required().trim().lowercase(),
-        occupation: Yup.string().required().trim().lowercase(),
-        hobbies: Yup.string().lowercase().required(),
+        gender: Yup.string().trim().lowercase(),
+        occupation: Yup.string().trim().lowercase(),
+        hobbies: Yup.string().lowercase(),
         interestedIn: Yup.string(),
-        location: Yup.string().required(),
+        location: Yup.string(),
         // requestsSentTo: Joi.array().items(Joi.number()),
         // requestsReceived: Joi.array().items(
         //   Joi.object.shape({
         //     userID: Joi.number(),
-        //     status: Joi.string().required().trim().lowercase(),
+        //     status: Joi.string().trim().lowercase(),
         //   })
         // ),
         // usersMatched: Joi.array().items(Joi.number()),
@@ -67,7 +67,7 @@ const SignUpPage = () => {
             <div className="container">
               <form onSubmit={formik.handleSubmit} className="form-container">
                 <img src="/images/bhetumorglogo.png" alt="" />
-                <h4>SIGN UP</h4>
+                <h4>Update your details</h4>
                 <div>
                   <label htmlFor="firstName"></label>
                   <input
@@ -216,4 +216,4 @@ const SignUpPage = () => {
     </Formik>
   );
 };
-export default SignUpPage;
+export default editUserDetails;

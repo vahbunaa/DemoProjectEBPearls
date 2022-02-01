@@ -5,7 +5,7 @@ import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import GetUsers from "./getAllUsers";
+import GetUsers from "./user/getAllUsers";
 import { display } from "@mui/system";
 
 export const CardComponent = ({ _id, age, bio, name }) => {

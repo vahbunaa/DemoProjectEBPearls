@@ -14,9 +14,9 @@ function App() {
         <Route exact path="/dashboard">
           <Dashboard />
         </Route>
-        <Route exact path="/filterusers">
+        {/* <Route exact path="/filterusers">
           <FilterUsers />
-        </Route>
+        </Route> */}
       </Switch>
     </Router>
   );
